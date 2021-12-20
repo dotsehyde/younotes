@@ -3,14 +3,14 @@
     <div class="app">
       <Navigation />
       <router-view />
-      <Footer/>
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
 import Navigation from "../src/components/Navigation.vue";
-import Footer from './components/Footer.vue';
+import Footer from "./components/Footer.vue";
 export default {
   name: "app",
   components: {
@@ -62,5 +62,76 @@ export default {
 
 .link-light {
   color: #fff;
+}
+
+.arrow {
+  margin-left: 8px;
+  width: 12px;
+  path {
+    fill: #000;
+  }
+}
+
+.arrow-light {
+  path {
+    fill: #fff;
+  }
+}
+
+.blog-card-wrap {
+  position: relative;
+  background-color: #f1f1f1;
+  padding: 80px 16px;
+  @media (min-width: 500px) {
+    padding: 100px 16px;
+  }
+
+  button,
+  .router-btn {
+    transition: 500ms ease all;
+    cursor: pointer;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: #303030;
+    color: var(--whiteColor);
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: var(--accentColor);
+    }
+  }
+
+  .button-light{
+    background-color: transparent;
+    border:2px solid var(--whiteColor);
+    color:var(--whiteColor)
+  }
+
+  .button-inactive{
+    cursor: none !important;
+    pointer-events: none !important;
+    background-color: rgba(128,128,128,0.5) !important;
+  }
+
+  .blog-cards {
+    place-items: center;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    @media (min-width: 500px) { 
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 </style>

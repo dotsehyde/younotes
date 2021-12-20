@@ -4,7 +4,7 @@
       <ul>
         <router-link class="link" :to="{ name: 'home' }">Home</router-link>
         |
-        <router-link class="link" :to="{ name: 'blog' }">Blogs</router-link>
+        <router-link class="link" :to="{ name: 'blog' }">Notes</router-link>
         |
         <router-link class="link" :to="{ name: 'login' }"
           >Login/Register</router-link
