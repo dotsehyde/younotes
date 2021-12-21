@@ -8,8 +8,8 @@
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
-          <router-link class="link" to="#">Home</router-link>
-          <router-link class="link" to="#">Notes</router-link>
+          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          <router-link class="link" :to="{ name: 'Notes' }">Notes</router-link>
           <router-link class="link" to="#">Create Note</router-link>
           <router-link class="link" to="#">Login/Register</router-link>
         </ul>
@@ -20,9 +20,9 @@
       <div v-show="mobileNav" class="mobile-nav-ctn">
         <p class="logo">YouNotes.</p>
         <ul>
-          <router-link class="link" to="#">Home</router-link>
-          <router-link class="link" to="#">Blogs</router-link>
-          <router-link class="link" to="#">Create Post</router-link>
+          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          <router-link class="link" :to="{ name: 'Notes' }">Blogs</router-link>
+          <router-link class="link" to="#">Create Note</router-link>
           <router-link class="link" to="#">Login/Register</router-link>
         </ul>
       </div>
@@ -132,8 +132,8 @@ header {
   background-color: var(--primaryColor);
   top: 0;
   left: 0;
-  p{
-    color:var(--whiteColor);
+  p {
+    color: var(--whiteColor);
     text-align: center;
     font-weight: 600;
     font-size: 1.5rem;

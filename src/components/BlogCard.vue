@@ -1,6 +1,6 @@
 <template>
   <div class="blog-card">
-    <div class="icons">
+    <div v-show="editPost" class="icons">
       <div class="icon">
         <Edit class="edit" />
       </div>
@@ -27,6 +27,11 @@ export default {
   name: "blog-card",
   props: ["post"],
   components: { Arrow, Edit, Delete },
+  computed:{
+    editPost(){
+      return this.$store.state.editPost;
+    }
+  }
 };
 </script>
 
@@ -51,7 +56,7 @@ export default {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 99;
+  z-index: 50;
   .icon {
     display: flex;
     justify-content: center;
@@ -62,7 +67,7 @@ export default {
     background-color: var(--whiteColor);
     transition: 0.5s ease all;
     &:hover {
-      background-color: var(--greyColor);
+      background-color: var(--accentColor);
       .edit,
       .del {
         path {

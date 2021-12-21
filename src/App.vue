@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <Navigation />
+      <Navigation v-show="!navDisable" />
       <router-view />
-      <Footer />
+      <Footer v-show="!navDisable" />
     </div>
   </div>
 </template>
@@ -18,12 +18,31 @@ export default {
     Footer,
   },
   data() {
-    return {};
+    return {
+      navDisable: null,
+    };
   },
-  created() {},
+  created() {
+    this.checkRoute();
+  },
   mounted() {},
-  methods: {},
-  watch: {},
+  methods: {
+    checkRoute() {
+      if (
+        this.$route.name === "Login" ||
+        this.$route.name === "Register" ||
+        this.$route.name === "Forgot"
+      ) {
+        return (this.navDisable = true);
+      }
+      this.navDisable = false;
+    },
+  },
+  watch: {
+    $route(){
+      this.checkRoute();
+    }
+  },
 };
 </script>
 
@@ -86,7 +105,25 @@ export default {
     padding: 100px 16px;
   }
 
-  button,
+  button {
+    transition: 500ms ease all;
+    cursor: pointer;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: #303030;
+    color: var(--whiteColor);
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: var(--accentColor);
+    }
+  }
+  
   .router-btn {
     transition: 500ms ease all;
     cursor: pointer;
@@ -106,16 +143,16 @@ export default {
     }
   }
 
-  .button-light{
+  .button-light {
     background-color: transparent;
-    border:2px solid var(--whiteColor);
-    color:var(--whiteColor)
+    border: 2px solid var(--whiteColor);
+    color: var(--whiteColor);
   }
 
-  .button-inactive{
+  .button-inactive {
     cursor: none !important;
     pointer-events: none !important;
-    background-color: rgba(128,128,128,0.5) !important;
+    background-color: rgba(128, 128, 128, 0.5) !important;
   }
 
   .blog-cards {
@@ -123,7 +160,7 @@ export default {
     display: grid;
     gap: 32px;
     grid-template-columns: 1fr;
-    @media (min-width: 500px) { 
+    @media (min-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width: 900px) {

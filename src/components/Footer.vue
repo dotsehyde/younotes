@@ -2,9 +2,9 @@
   <footer>
     <div class="links">
       <ul>
-        <router-link class="link" :to="{ name: 'home' }">Home</router-link>
+        <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         |
-        <router-link class="link" :to="{ name: 'blog' }">Notes</router-link>
+        <router-link class="link" :to="{ name: 'Notes' }">Notes</router-link>
         |
         <router-link class="link" :to="{ name: 'login' }"
           >Login/Register</router-link
