@@ -6,7 +6,7 @@
         |
         <router-link class="link" :to="{ name: 'Notes' }">Notes</router-link>
         |
-        <router-link class="link" :to="{ name: 'login' }"
+        <router-link class="link" :to="{ name: 'Login' }"
           >Login/Register</router-link
         >
       </ul>

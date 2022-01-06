@@ -11,7 +11,7 @@
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Notes' }">Notes</router-link>
           <router-link class="link" to="#">Create Note</router-link>
-          <router-link class="link" to="#">Login/Register</router-link>
+          <router-link class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
       </div>
     </nav>
@@ -21,9 +21,9 @@
         <p class="logo">YouNotes.</p>
         <ul>
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-          <router-link class="link" :to="{ name: 'Notes' }">Blogs</router-link>
-          <router-link class="link" to="#">Create Note</router-link>
-          <router-link class="link" to="#">Login/Register</router-link>
+          <router-link class="link" :to="{ name: 'Notes' }">Notes</router-link>
+          <router-link class="link" :to="{ name: '' }">Create Note</router-link>
+          <router-link class="link" :to="{ name: 'Login' }">Login/Register</router-link>
         </ul>
       </div>
     </transition>

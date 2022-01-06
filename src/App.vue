@@ -71,6 +71,11 @@ export default {
   max-width: 1440px;
   margin: 0 auto;
 }
+.error{
+  color:red;
+  font-size: 12px;
+  text-align: center;
+}
 
 .link {
   cursor: pointer;

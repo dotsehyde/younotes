@@ -12,7 +12,7 @@
           {{ post.blogPost }}
         </p>
         <p class="content-preview" v-else>{{ post.blogHtml }}</p>
-        <router-link v-if="post.welcomeScreen" class="link link-light" to="#">
+        <router-link v-if="post.welcomeScreen" class="link link-light" :to="{name:'Login'}">
           Login/Register<Arrow class="arrow arrow-light" />
         </router-link>
         <router-link v-else class="link" to="#">

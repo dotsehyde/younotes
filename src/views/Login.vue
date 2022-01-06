@@ -42,7 +42,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 .form-wrap {
   overflow: hidden;
   display: flex;
